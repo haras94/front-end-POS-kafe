@@ -1,7 +1,6 @@
 <template>
   <div>
     <FrontCover/>
-
     <div class="kotak_register">
     <form>
             <input type="text" v-model="fullname" name="username"
@@ -15,25 +14,63 @@
 
             <div class="formtombol">
                 <button  @click="register" class="tombol_signup">Sign Up</button>
-                <router-link to="/Login" class="tombol_login">Login</router-link>
+                <router-link to="/" class="tombol_login">Login</router-link>
             </div>
     </form>
 </div>
         <div class="h1ya">
             <h1 class="judulnya"> Register</h1>
             <p class="tulisan_register">Welcome Back,Please Register</p>
-            <p class="tulisan_register1">to create account</p>
+            <!-- <p class="tulisan_register1">to create account</p> -->
 </div>
 </div>
 </template>
 
 <script>
+import axios from 'axios';
+import FrontCover from '../components/small/FrontCover.vue';
+
 export default {
+    name: 'register',
+    components: {
+    FrontCover,
+    },
+
+     data() {
+    return {
+      fullname: '',
+      email: '',
+      password: '',
+    };
+  },
+  methods: {
+    register(e) {
+      e.preventDefault();
+      axios.post('http://localhost:3700/kafe/v1/user/register', {
+        fullname: this.fullname,
+        email: this.email,
+        password: this.password,
+      })
+        .then((req) => {
+          console.log(req);
+          this.$router.push('/');
+        })
+        .catch(() => {
+          this.RegisterFailed();
+        });
+    },
+  },
 
 }
 </script>
 
-<style>
+<style scoped>
+    .h1ya{
+        position: relative;
+        right: 30px;
+        top: -130px;
+    }
+
     .judulnya{
     position: absolute;
     font-family: 'Montserrat', sans-serif;
@@ -47,8 +84,8 @@ export default {
     text-align: right center;
     position: absolute;
     width: 388px;
-    height: 110px;
-    right: 113px;
+    /* height: 110px; */
+    right: 80px;
     top: 185px;
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
@@ -58,10 +95,10 @@ export default {
 
 .tulisan_register1{
     text-align: right center;
-    position: absolute;
-    width: auto;
-    height: auto;
-    right: 350px;
+    position: relative;
+    /* width: auto; */
+    /* height: 70px; */
+    left: 35px;
     top: 210px;
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
@@ -78,8 +115,8 @@ export default {
     border: black;
     position: absolute;
     font-family: 'Montserrat', sans-serif;
-    right: 130px;
-    top: 180px;
+    right: 150px;
+    top: 210px;
     float: right;
 }
 .kotak_register h1{
@@ -102,6 +139,7 @@ export default {
     position: absolute;
     bottom: 0px;
     left: 18px;
+    top: 250px;
 
 }
 
@@ -134,5 +172,6 @@ export default {
     border-radius: 5px;
     padding: 10px 20px;
     text-decoration: none;
+    right: 50px;
 }
 </style>

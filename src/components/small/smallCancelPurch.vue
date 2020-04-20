@@ -1,9 +1,9 @@
 <template>
   <div class="buttonCancel">
-      <div class="smallCancellPurch">
+      <button class="smallCancellPurch">
       <div class="cancel">Cancel
     </div>
-    </div>
+    </button>
       
   </div>
 </template>

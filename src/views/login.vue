@@ -29,13 +29,55 @@
 </template>
 
 <script>
-import FrontCover from '../components/small/FrontCover.vue'
+import FrontCover from '../components/small/FrontCover.vue';
+import axios from 'axios';
 
 export default {
     name: 'login',
     components: {
         FrontCover,
+    },
+
+    data() {
+    return {
+      email: '',
+      password: '',
+      error: false,
+    };
+  },
+  methods: {
+    Login(e) {
+      e.preventDefault();
+      axios.post('http://localhost:3700/kafe/v1/user/login', {
+        email: this.email,
+        password: this.password,
+      })
+        .then((req) => {
+          console.log(req);
+          this.$router.push('/dash');
+        })
+        .catch(() => {
+          this.loginFailed();
+        });
+    },
+  },
+  LoginSuccess(request) {
+    if (!request.data.result[0].email) {
+      this.loginFailed();
+      return;
     }
+    //   if (request.data.result[0].status === 0) {
+    //       this.notactivated(request);
+    localStorage.email = request.data.result[0].email;
+    localStorage.idUser = request.data.result[0].id_user;
+    this.error = false;
+    this.$router.replace('/Dashboard');
+  },
+  loginFailed() {
+    this.error = 'Login Failed';
+    delete localStorage.email;
+    delete localStorage.idUser;
+  },
 }
 </script>
 
@@ -181,5 +223,9 @@ a{
     border-radius: 5px;
     padding: 10px 20px;
     font-family: 'Montserrat', sans-serif;
+}
+
+.a{
+    text-transform: none;
 }
 </style>

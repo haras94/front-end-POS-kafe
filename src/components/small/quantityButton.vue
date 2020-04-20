@@ -1,6 +1,6 @@
 <template>
   <div class="contoh">
-      <div class="gambarChoose"><img class="pictChoose1" src="../../assets/img/blackforest.png"></div>
+      <div class="gambarChoose"><img class="pictChoose1" src="../../assets/img/blackforest.png" width="100px" height="100px"></div>
       <div class="gabungan">
           <div class="judulChoose">Blackforest</div>
           <div class="gabungan1">
@@ -36,6 +36,7 @@ export default {
         flex-direction: column;
         justify-content: space-between;
         margin-left: 20px;
+        height: 100px;
     }
 
     .gabungan1{
@@ -98,11 +99,17 @@ export default {
 
    .judulChoose{
     position: relative;
-    width: auto;
+    width: 50px;
     height: 45px;
     font-size: 15px;
     line-height: 33px;
     color: #000000;
     margin-top: -10px;
+   }
+
+
+   .gambarChoose{
+       width: 100px;
+       height: 100px;
    }
 </style>

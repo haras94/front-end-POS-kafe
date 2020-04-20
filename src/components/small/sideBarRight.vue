@@ -1,12 +1,12 @@
 <template>
   <div>
       <div class="rightbarNew">
-        <quantityButton v-for="items in 3" :key="items.id"/>
+      <div class="indukpurch">
+        <quantityButton v-for="items in 20" :key="items.id"/></div>
         <div class="textTPurch">
           <div class="textTotal">Total: </div>
           <div class="hargaTotal">Rp.105.000*</div>
           <div class="textPajak">*Belum Termasuk ppn</div>
-          <modal/>
           <smallSquarePurch/>
           <smallCancellPurch/>
         </div>
@@ -16,25 +16,31 @@
 
 <script>
 import quantityButton from '../small/quantityButton.vue'
-import modal from '../small/modal.vue'
 import smallSquarePurch from '../small/smallSquarePurch.vue'
 import smallCancellPurch from '../small/smallCancelPurch.vue'
 export default {
     name: 'rightbarNew',
     components: {
         quantityButton,
-        modal,
         smallSquarePurch,
-        smallCancellPurch
+        smallCancellPurch,
 
-    }
+    },
+    methods: {
+    open() {
+      document.querySelector('.modal-add').classList.toggle('modal');
+    },
+    close() {
+      document.querySelector('.modal-add').classList.toggle('modal');
+      },
+    },
 }
 </script>
 
 <style scoped>
     .rightbarNew{
-    position: absolute;
-    width: 350px;
+    position: fixed;
+    /* width: 350px; */
     height: 800px;
     background: #FFFFFF;
     border: 1px solid #CECECE;
@@ -42,7 +48,7 @@ export default {
     flex-direction: column;
     padding: 0 40px;
     right: 0px;
-    top: 80px;
+    top: 60px;
     }
 
     .textTotal{
@@ -75,6 +81,13 @@ export default {
     font-size: 15px;
     line-height: 26px;
     color: #000000;
+    }
+
+    .indukpurch{
+      height: 180px;
+      overflow-y: scroll;
+      margin-top: 80px;
+      /* width: 300px; */
     }
 
 </style>

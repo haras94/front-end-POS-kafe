@@ -34,7 +34,7 @@ export default {
     position: absolute;
     top: 88px;
     z-index: 2;
-    color: darkcyan;
+    color: greenyellow;
     font-size: 64px;
     left: 58px;
     font-weight: bold;

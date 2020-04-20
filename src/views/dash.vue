@@ -1,37 +1,40 @@
 <template>
-  <div>
+  <div class="bgc">
       <div class="navbar">
-        <button id="openNav"><img class="burger"
-        src="../../src/assets/img/menu (1).png"></button>
+        <a id="imageDivLink" href="javascript:toggle5('contentDivImg', 'imageDivLink');"><img class="burger"
+        src="../../src/assets/img/menu (1).png"></a>
 
         <div class="textnav"><p>Food Items</p></div>
-        
         <div>
           <img class="glass" src="../assets/img/magnifying-glass.png">
-        </div><div class="cart"><p>Cart <span>0</span></p>
-        </div></div>
-
-        <div class="sidebar">
-            <img class="fork" src="../assets/img/fork.png">
-            <img class="clipboard" src="../assets/img/clipboard.png">
-            <img class="add" src="../assets/img/add.png">
+        </div>
+        <button><div class="cart"><p>Cart <span>0</span></p>
+        </div></button>
         </div>
 
+        <div class="sidebar" id="contentDivImg" style="display: block;">
+           <button> <img class="fork" src="../assets/img/fork.png">
+           <router-link to="/history"> <img class="clipboard" src="../assets/img/clipboard.png"></router-link></button>
+            <div><button><img class="add" src="../assets/img/add.png"></button>
+            </div>
+        </div>
         <div class="bgCard">
-            <div class="row">
-            <div class="col-md-4">
             <card/>
-           </div>
-
-          <div class="col-md-4">
-            <card/>
-          </div>
-
-          <div class="col-md-4">
-            <card/>
-          </div>
         </div>
-        </div>
+        <!-- <div>
+          <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav></div> -->
         <div><rightbarNew/></div>
 
         <!-- <div class="rightbar">
@@ -42,32 +45,47 @@
   </div>
 </template>
 
-<script>
-import card from '../components/small/card.vue'
-import rightbarNew from '../components/small/sideBarRight.vue'
+<script type="text/javascript">
+import card from '../components/small/card.vue';
+import rightbarNew from '../components/small/sideBarRight.vue';
+// import print from '../components/small/print.vue';
 
 export default {
     name: 'dash',
-    components: {
+   components: {
         card,
         rightbarNew,
-      }
+        // print,
+      },
+
+      methods: {
+    open() {
+      document.querySelector('.modal').classList.toggle('modal1');
+    },
+
+},
 }
 </script>
 
 <style scoped>
+    .bgc{
+      background-color: rgba(190, 195, 202, 0.3);;
+      height: 1800px;
+    }
+
     .navbar{
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     background: #FFFFFF;
     box-sizing: border-box;
     width: 100%;
     height: 100px;
-    position: relative;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     left: 0px;
     z-index: 1;
+    top: 0px;
     }
 
     .burger{
@@ -95,10 +113,11 @@ export default {
     height: 35px;
     right: 520px;
     top: 34px;
+    cursor: pointer;
     }
 
     .sidebar{
-    position: absolute;
+    position: fixed;
     width: 109px;
     height: 700px;
     left: 0px;
@@ -198,6 +217,7 @@ export default {
       width: 800px;
       margin-left: 155px;
       margin-top: 20px;
+      margin-bottom: 20px;
     }
 
 </style>
