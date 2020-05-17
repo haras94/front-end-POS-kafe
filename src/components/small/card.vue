@@ -31,9 +31,9 @@ export default {
     .card{
         width: 20%;
         margin: 5px 5px;
-        top: 40px;
-        margin-top: 80px;
-        margin-bottom: 50px;
+        top: 80px;
+        margin-top: 20px;
+        margin-bottom: 30px;
         cursor: pointer;
         border-style: none;
       }

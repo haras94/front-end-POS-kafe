@@ -17,7 +17,7 @@ export default {
 }
 
 .a{
-  text-transform: none;
+  text-decoration: none;
 }
 
 </style>
