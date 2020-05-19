@@ -16,6 +16,7 @@
 - [Screenshots](#screenshots)
 - [Contributing](#contributing)
 - [Related Project](#related-project-backend)
+- [Contact](#contact)
 
 ## Features
 
