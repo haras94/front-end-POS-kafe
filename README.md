@@ -1,4 +1,4 @@
-# kafe-V1
+# Point Of Sale Kafe-V1
 
 <p align="center">
   <img height="100" src="https://vuejs.org/images/logo.png">
