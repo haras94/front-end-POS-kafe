@@ -60,12 +60,12 @@ VUE_APP_SECRET_KEY=YOUR_API_KEY
     </div>
     <div class="items">
     	<h4 class="title-demo">Login</h4>
-		<img class="img-demo" src="https://github.com/haras94/front-end-POS-kafe/blob/master/src/assets/ss%20web/pos-1.jpg">  
+		<img class="img-demo" src="https://github.com/haras94/front-end-POS-kafe/blob/master/src/assets/ss%20web/1.PNG">  
     </div>
     </div>
     <div class="items">
     	<h4 class="title-demo">Dashboard</h4>
-		<img class="img-demo" src="https://github.com/haras94/front-end-POS-kafe/blob/master/src/assets/ss%20web/pos-3.jpg">  
+		<img class="img-demo" src="https://github.com/haras94/front-end-POS-kafe/blob/master/src/assets/ss%20web/3.PNG">  
     </div>
 </div>
 </section>
