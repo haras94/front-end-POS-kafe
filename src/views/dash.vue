@@ -8,7 +8,7 @@
         <div>
           <img class="glass" src="../assets/img/magnifying-glass.png">
         </div>
-        <button><div class="cart"><p>Cart <span>0</span></p>
+        <button><div class="cart"><p>Cart <span>5</span></p>
         </div></button>
         </div>
 

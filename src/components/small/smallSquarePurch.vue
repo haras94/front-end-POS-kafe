@@ -14,15 +14,15 @@
         <br>
         <br>
         <br>
-        <div class="purch-item"> Coffee Latte 1x <span class="price-item-purch">Rp. 15.000</span></div>
+        <div class="purch-item"> Blackforest 5x <span class="price-item-purch">Rp. 100.000</span></div>
         <br>
-        <div class="purch-item1"> Coffee Latte 1x <span class="price-item-purch1">Rp. 15.000</span></div>
+        <!-- <div class="purch-item1"> Coffee Latte 1x <span class="price-item-purch1">Rp. 15.000</span></div>
         <br>
         <div class="purch-item2"> Coffee Latte 1x <span class="price-item-purch2">Rp. 15.000</span></div>
+        <br> -->
+        <div class="purch-item3"> Ppn 10% <span class="price-item-purch3">Rp. 10.000</span></div>
         <br>
-        <div class="purch-item3"> Ppn 10% <span class="price-item-purch3">Rp. 10.500</span></div>
-        <br>
-        <div class="total"> Total: <span class="total-purch">Rp. 115.500</span></div>
+        <div class="total"> Total: <span class="total-purch">Rp. 110.000</span></div>
         <br>
         <div class="payment-cash"> Payment: Cash </div>
         <br>
@@ -104,7 +104,7 @@ export default {
 
     .price-item-purch{
       position: relative;
-      right: -485px;
+      right: -492px;
     }
 
     .purch-item1{

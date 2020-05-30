@@ -2,10 +2,10 @@
   <div>
       <div class="rightbarNew">
       <div class="indukpurch">
-        <quantityButton v-for="items in 20" :key="items.id"/></div>
+        <quantityButton v-for="items in 5" :key="items.id"/></div>
         <div class="textTPurch">
           <div class="textTotal">Total: </div>
-          <div class="hargaTotal">Rp.105.000*</div>
+          <div class="hargaTotal">Rp.100.000*</div>
           <div class="textPajak">*Belum Termasuk ppn</div>
           <smallSquarePurch/>
           <smallCancellPurch/>
